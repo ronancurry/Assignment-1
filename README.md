@@ -1,10 +1,12 @@
-# Assignment-1
+# Assignment-1 - Ronan Curry
+
+This assignment is a collection of small Python exercises based on everyday business situations. Each exercise focuses on a different programming concept, such as input, conditionals, functions, and string methods.
 
 ## Exercises
 
 ### Exercise 1: Profit Margin Calculator
 
-Reads revenue and cost as floats, then calculates profit and profit margin. Revenue must be greater than zero to calculate the margin; otherwise, the program reports invalid revenue.
+This program asks for a product's revenue and cost, then calculates the profit and profit margin. If the revenue is zero or negative, it displays an invalid revenue message instead of trying to divide by zero.
 
 Sample run:
 
@@ -16,7 +18,7 @@ Profit: $1,500.00 | Margin: 30.00%
 
 ### Exercise 2: Credit Score Evaluator
 
-Reads an integer credit score and categorizes it as Excellent, Good, Fair, or Poor. Scores outside the assumed 300-850 range are invalid. Approved scores receive a low-interest-rate message; other scores receive a credit-improvement message.
+This program uses a credit score to decide whether a customer is likely to qualify for a loan. It places the score into an Excellent, Good, Fair, or Poor category. Scores below 300 or above 850 are treated as invalid.
 
 Sample run:
 
@@ -27,7 +29,7 @@ Good - Loan Approved with Review. Interest rate: Low
 
 ### Exercise 3: Customer Greeting Formatter
 
-Formats a customer's first name with a default `Customer` title. The function strips whitespace, normalizes capitalization, splits full names, and returns a fallback greeting for empty input.
+This program cleans up a customer's full name and creates a friendly greeting using the first name. It also has a default `Customer` title and uses a fallback greeting when no name is entered.
 
 Sample run:
 
@@ -38,7 +40,7 @@ Hello, John (Customer)!
 
 ### Exercise 4: Tax Bracket Determiner
 
-Uses a function to return a tax bracket for a float income and calculates estimated tax using the bracket's illustrative rate. Negative income is treated as invalid.
+This program uses a person's annual income to find a tax bracket and estimate their tax. The rates are simple examples for this exercise, and negative income is treated as invalid.
 
 Sample run:
 
@@ -49,7 +51,7 @@ Your bracket: Medium (20%). Estimated tax: 15000.0
 
 ### Exercise 5: Product Category Matcher
 
-Normalizes a product name with `strip()` and `lower()`, then uses `match` cases and `startswith()` to select a pricing category. Uppercase input and extra surrounding spaces are supported.
+This program cleans up a product name and uses a `match` statement to place it into a pricing category. It recognizes common names such as electronics, clothing, and grocery items. Uppercase input and extra spaces are handled automatically.
 
 Sample run:
 
@@ -60,7 +62,7 @@ Product: tech phone | Category: High Margin
 
 ### Bonus: Integrated Decision Tool
 
-Combines revenue, cost, and product category decisions. A helper function returns whether the business is profitable, and profitable products receive an investment recommendation based on their category.
+This bonus program brings several earlier ideas together. It checks whether revenue is greater than cost, identifies the product category, and gives an investment suggestion when the business is profitable.
 
 Sample run:
 
@@ -75,8 +77,8 @@ Suggestion: Reinvest
 
 ## Assumptions
 
-- The programs are run with Python 3.10 or newer because Exercise 5 and the bonus use `match` statements.
-- Numeric prompts receive valid numeric input unless the exercise explicitly tests invalid ranges.
-- Exercise 2 assumes credit scores are normally between 300 and 850.
-- Exercise 4 uses simple flat illustrative tax rates of 10%, 20%, and 30%; it is not tax advice.
-- Product categories are compared after trimming whitespace and converting input to lowercase.
+- I am running these programs with Python 3.10 or newer because the product matcher and bonus use `match` statements.
+- The numeric prompts are expected to receive numbers. The exercises handle the invalid ranges that are specifically required in each task.
+- Credit scores are assumed to normally fall between 300 and 850.
+- The tax rates are simplified examples for practice and should not be treated as real tax advice.
+- Product names are trimmed and converted to lowercase before they are compared.
