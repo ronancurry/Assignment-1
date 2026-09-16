@@ -1,0 +1,35 @@
+def is_profitable(revenue, cost):
+	return revenue > cost
+
+
+def get_category_decision(category):
+	match category:
+		case "electronics" | "gadget" | "tech":
+			return "High Margin", "Reinvest"
+		case "clothing" | "apparel":
+			return "Medium Margin", "Maintain and optimize"
+		case "food" | "grocery":
+			return "Low Margin", "Review pricing"
+		case _:
+			return "Uncategorized", "Review product strategy"
+
+
+def main():
+	revenue = float(input("What's the revenue? "))
+	cost = float(input("What's the cost? "))
+	category = input("What's the product category? ").strip().lower()
+	category_name, recommendation = get_category_decision(category)
+
+	print(f"Category: {category_name}")
+
+	if is_profitable(revenue, cost):
+		profit = revenue - cost
+		print(f"Profit: ${profit:,.2f}")
+		print(f"Suggestion: {recommendation}")
+	else:
+		loss = cost - revenue
+		print(f"Not profitable. Loss: ${loss:,.2f}")
+
+
+if __name__ == "__main__":
+	main()
