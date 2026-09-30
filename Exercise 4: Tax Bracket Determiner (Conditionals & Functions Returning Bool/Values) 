@@ -1,23 +1,27 @@
 def get_tax_bracket(income):
 	if income < 0:
-		return "Invalid income."
-	elif income < 50000:
+		return "Invalid income"
+	if income < 50000:
 		return "Low (10%)"
-	elif income < 100000:
+	if income < 100000:
 		return "Medium (20%)"
-	else:
-		return "High (30%)"
+	return "High (30%)"
 
 
 income = float(input("What's your annual income? "))
 bracket = get_tax_bracket(income)
-tax_rates = {
-	"Low (10%)": 0.10,
-	"Medium (20%)": 0.20,
-	"High (30%)": 0.30,
-}
-rate = tax_rates.get(bracket, 0.0)
-estimated_tax = round(income * rate, 2) if income >= 0 else 0.0
-display_bracket = bracket.rstrip(".")
 
-print(f"Your bracket: {display_bracket}. Estimated tax: {estimated_tax}")
+if bracket == "Invalid income":
+	print("Your bracket:", bracket)
+elif bracket == "Low (10%)":
+	estimated_tax = income * 0.10
+	print("Your bracket:", bracket)
+	print("Estimated tax:", estimated_tax)
+elif bracket == "Medium (20%)":
+	estimated_tax = income * 0.20
+	print("Your bracket:", bracket)
+	print("Estimated tax:", estimated_tax)
+else:
+	estimated_tax = income * 0.30
+	print("Your bracket:", bracket)
+	print("Estimated tax:", estimated_tax)
